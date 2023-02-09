@@ -2,6 +2,8 @@ import React from 'react';
 import "./Header.css";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { KeyboardArrowDown } from '@mui/icons-material';
+import { NavLink } from 'react-router-dom';
+
 
 const Header = () => {
   return (
@@ -41,7 +43,9 @@ const Header = () => {
            
         </div> 
         <div className="button">
+        <NavLink to="../UploadButton">
             <h2>Upload</h2>
+            </NavLink>
         </div>
         <div className="button">
             <h2>Create</h2>

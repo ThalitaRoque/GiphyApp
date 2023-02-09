@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { fetchSearchGiphys, fetchTrendingGiphys } from "../../api/giphyApi";
-import giphyArtists from "../../pages/Artists/Artists";
+import giphyArtists from "../../util/Artists";
 import TrendingGiphy from "../TrendingGiphy/TrendingGiphy";
 import ArtistsGiphy from "../ArtistsGiphy/ArtistsGiphy" ;
 import "./Media.css";
+import ClipsGiphysSection from "../ClipsGiphySection/ClipsGiphySection";
+
 
 const Media = () => {
     const [trending, setTrending] = useState([]);
     const [artists, setArtists] = useState([]);
+    const [clips, setClips] = useState([]);
+   
     
 
     const randomizeData = (content) => {
@@ -28,15 +32,19 @@ const Media = () => {
         setArtists(artists.flat());
     };
 
+    const getSearchedGiphys = async (query, setState) => {
+        const searched = await fetchSearchGiphys(query);
+        setState(randomizeData(searched.data));
+    }
+
  useEffect(()=> {
     getTrendingGiphys();
     getArtists();
+    getSearchedGiphys("coffee", setClips);
     // eslint-disable-next-line react-hooks/exhaustive-deps
  },[]);
 
-    // console.log(trending, 'what it is a trending!');
-    
- console.log(artists, 'what is in artists!');
+
 
   return (
     <div className="media">
@@ -69,16 +77,7 @@ const Media = () => {
           <h1>Clips</h1>
         </div>
         <div className="clips-container">
-            <p>Content</p>
-        </div>
-      </div>
-      <div className="row">
-      <div className="row-header">
-        <img src="./images/stories.svg" alt="stories" />
-          <h1>Stories</h1>
-        </div>
-        <div className="stories-container">
-            <p>Content</p>
+            <ClipsGiphysSection giphysArray={clips}/>
         </div>
       </div>
     </div>

@@ -1,0 +1,33 @@
+.upload{
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.upload img {
+    width: 150px;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: thick double #32a1ce;
+    margin-top: 20px;
+    margin-right: 650px;
+    margin-left: 650px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+}
+
+.button{
+    background-color: #6d63ff;
+    width: 75px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3px;
+    list-style-type: none;
+    color: white;
+}

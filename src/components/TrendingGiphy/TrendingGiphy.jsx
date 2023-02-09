@@ -1,6 +1,7 @@
 import React from "react";
 import "./TrendingGiphy.css";
 
+
 const TrendingGiphy = ({ giphy }) => {
     return (
        <div className="trending-giphy" key={giphy.id}>

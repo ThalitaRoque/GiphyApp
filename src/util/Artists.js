@@ -1,8 +1,8 @@
  const giphyArtists = [
+  "Grande+Dame",
    "Pusheen",
     "Toke",
     "Dylan+Morang",
-    "Grande+Dame",
     "TRIPPIESTEFF",
    
  ]

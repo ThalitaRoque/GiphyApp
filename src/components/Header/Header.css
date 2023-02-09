@@ -23,6 +23,8 @@
     justify-content: center;
     align-items: center;
     margin-right: 3px;
+    text-decoration: none;
+    color: white;
 }
 .profile{
     background-color:grey;
