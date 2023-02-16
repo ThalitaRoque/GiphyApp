@@ -25,3 +25,10 @@
     overflow: hidden;
     height: 230px;
 }
+
+.gifs-container{
+    display: flex;
+    height: 200px;
+    
+}
+

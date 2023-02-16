@@ -1,10 +1,9 @@
- const giphyArtists = [
+const giphyArtists = [
+  "Pusheen",
+  "Dylan+Morang",
+  "Toke",
   "Grande+Dame",
-   "Pusheen",
-    "Toke",
-    "Dylan+Morang",
-    "TRIPPIESTEFF",
-   
- ]
+  "TRIPPIESTEFF"
+];
 
- export default giphyArtists;
+export default giphyArtists;

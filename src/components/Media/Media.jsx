@@ -5,15 +5,18 @@ import TrendingGiphy from "../TrendingGiphy/TrendingGiphy";
 import ArtistsGiphy from "../ArtistsGiphy/ArtistsGiphy" ;
 import "./Media.css";
 import ClipsGiphysSection from "../ClipsGiphySection/ClipsGiphySection";
+import MyGifs from "../MyGifs/MyGifs";
+
 
 
 const Media = () => {
     const [trending, setTrending] = useState([]);
     const [artists, setArtists] = useState([]);
     const [clips, setClips] = useState([]);
+
+  
    
     
-
     const randomizeData = (content) => {
         return content.data.sort(() => Math.random() - 0.5);
     }
@@ -36,11 +39,15 @@ const Media = () => {
         const searched = await fetchSearchGiphys(query);
         setState(randomizeData(searched.data));
     }
+ 
+  
+ 
 
  useEffect(()=> {
     getTrendingGiphys();
     getArtists();
     getSearchedGiphys("coffee", setClips);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
  },[]);
 
@@ -80,7 +87,17 @@ const Media = () => {
             <ClipsGiphysSection giphysArray={clips}/>
         </div>
       </div>
+      <div className="row">
+        <div className="row-header">
+            <img src="./images/stories.svg" alt="gifs" />
+          <h1>My Gifs</h1>
+        </div>
+        <div className="gifs-container">
+                 <MyGifs />
+        </div>
+      </div>
     </div>
+    
   );
 };
 
